@@ -1,0 +1,12 @@
+# import Profile from 'profiles/schema.graphql'
+
+type Query {
+    profile(id: ID!): Profile
+    profiles: [Profile!]!
+}
+
+type Mutation {
+    createProfile(data: ProfileInput!): Profile!
+    updateProfile(data: ProfileInput!): Profile!
+    deleteProfile(id: ID!): Profile
+}

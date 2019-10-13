@@ -1,0 +1,11 @@
+type Profile {
+    id: ID!
+    name: String!
+    label: String!
+}
+
+input ProfileInput {
+    id: ID
+    name: String!
+    label: String!
+}
