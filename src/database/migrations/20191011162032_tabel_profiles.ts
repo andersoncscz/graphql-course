@@ -5,6 +5,8 @@ export async function up(knex: Knex): Promise<any> {
         table.increments('id').primary()
         table.string('name').notNullable().unique()
         table.string('label').notNullable()
+        table.boolean('is_active').notNullable().defaultTo(true)
+        table.timestamp('created_at').defaultTo(knex.fn.now())
     }).then(() => {
         return knex('profiles').insert([
             { name: 'common', label: 'Comum' },

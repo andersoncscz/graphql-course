@@ -1,12 +1,20 @@
-# import Profile from 'profiles/schema.graphql'
+# import User from './user.graphql'
+# import Profile from './profile.graphql'
 
 type Query {
     profile(id: ID!): Profile
     profiles: [Profile!]!
+    user(data: UserFilterInput!): User
+    users: [User!]!    
+    auth(data: UserAuthInput!): AccessToken
 }
 
 type Mutation {
     createProfile(data: ProfileInput!): Profile!
     updateProfile(data: ProfileInput!): Profile!
     deleteProfile(id: ID!): Profile
+
+    createUser(data: UserInput!): AccessToken!
+    updateUser(data: UserInput!): User!
+    deleteUser(id: ID!): User
 }

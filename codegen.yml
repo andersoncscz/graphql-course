@@ -1,8 +1,10 @@
-schema: src/services/graphql/schemas/schema.graphql
 generates:
-  ./src/services/graphql/generated/resolvers-types.d.ts:
+  ./src/services/graphql/generated/root-resolver-types.d.ts:
+    schema: src/services/graphql/schemas/schema.graphql
     plugins:
       - typescript
       - typescript-resolvers
     config:
+      noSchemaStitching: true
       useIndexSignature: true
+      contextType: ../resolvers/context#MyContext

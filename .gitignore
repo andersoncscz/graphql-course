@@ -4,5 +4,5 @@ node_modules
 #Database connection config
 .env
 
-#Build files
+#Built files
 dist

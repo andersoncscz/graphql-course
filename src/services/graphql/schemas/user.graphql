@@ -1,0 +1,45 @@
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    created_at: String!  
+    is_active: Boolean!
+    profiles: [Profile!]
+}
+
+type UserAuthenticated {
+    id: ID!
+    name: String!
+    email: String!
+    profiles: [Profile!]
+}
+
+type PayLoad {
+    user: UserAuthenticated!
+    iat: Int!
+    exp: Int
+}
+
+type AccessToken {
+    payload: PayLoad!
+    token: String!
+}
+
+input UserInput {
+    id: ID
+    name: String!
+    email: String!
+    password: String!
+    is_active: Boolean
+    profilesIds: [ID!]
+}
+
+input UserAuthInput {
+    email: String!
+    password: String!
+}
+
+input UserFilterInput {
+    id: ID
+    email: String
+}

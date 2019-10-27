@@ -2,6 +2,8 @@ type Profile {
     id: ID!
     name: String!
     label: String!
+    is_active: Boolean!
+    created_at: String!
 }
 
 input ProfileInput {
